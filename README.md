@@ -1,8 +1,10 @@
 # RepFL
 
-This repository provides the implementation for ["Replica-Based Federated Learning with Heterogeneous Architectures for Graph Super-Resolution"](https://link.springer.com/chapter/10.1007/978-3-031-45676-3_28) paper, which has been accepted at the International Workshop on Machine Learning in Medical Imaging (MLMI), held in conjuction with MICCAI 2023.
+This repository provides the implementation for ["Replica-Based Federated Learning with Heterogeneous Architectures for Graph Super-Resolution"](https://link.springer.com/chapter/10.1007/978-3-031-45676-3_28), which has been accepted at the International Workshop on Machine Learning in Medical Imaging (MLMI), held in conjuction with MICCAI 2023.
 
-![main figure](main_figure_repfl.png)
+<p align="center" width="100%">
+  <img src="main_figure_repfl.png" width="500"/>
+</p>
 
 > **Replica-Based Federated Learning with Heterogeneous Architectures for Graph Super-Resolution**
 >
@@ -10,23 +12,7 @@ This repository provides the implementation for ["Replica-Based Federated Learni
 >
 > <sup>1</sup>BASIRA Lab, Imperial-X and Department of Computing, Imperial College London, London, UK
 
-> **Abstract:**  Having access to brain connectomes at various resolutions is impor-
-tant for clinicians, as they can reveal vital information about brain anatomy and
-function. However, the process of deriving the graphs from magnetic resonance
-imaging (MRI) is computationally expensive and error-prone. Furthermore, an
-existing challenge in the medical domain is the small amount of data that is avail-
-able, as well as privacy concerns. In this work, we propose a new federated learn-
-ing framework, named RepFL. At its core, RepFL is a replica-based federated
-learning approach for heterogeneous models, which creates replicas of each par-
-ticipating client by copying its model architecture and perturbing its local training
-dataset. This solution enables learning from limited data with a small number of
-participating clients by aggregating multiple local models and diversifying the
-data distributions of the clients. Specifically, we apply the framework for graph
-super-resolution using heterogeneous model architectures. In addition, to the best
-of our knowledge, this is the first federated multi-resolution graph generation
-approach. Our experiments prove that the method outperforms other federated
-learning methods on the task of brain graph super-resolution. Our RepFL code is
-available at https://github.com/basiralab/RepFL.
+> **Abstract:**  Having access to brain connectomes at various resolutions is important for clinicians, as they can reveal vital information about brain anatomy and function. However, the process of deriving the graphs from magnetic resonance imaging (MRI) is computationally expensive and error-prone. Furthermore, an existing challenge in the medical domain is the small amount of data that is available, as well as privacy concerns. In this work, we propose a new federated learning framework, named RepFL. At its core, RepFL is a replica-based federated learning approach for heterogeneous models, which creates replicas of each participating client by copying its model architecture and perturbing its local training dataset. This solution enables learning from limited data with a small number of participating clients by aggregating multiple local models and diversifying the data distributions of the clients. Specifically, we apply the framework for graph super-resolution using heterogeneous model architectures. In addition, to the best of our knowledge, this is the first federated multi-resolution graph generation approach. Our experiments prove that the method outperforms other federated learning methods on the task of brain graph super-resolution. Our RepFL code is available at https://github.com/basiralab/RepFL.
 
 
 ## Implementation Details
@@ -44,7 +30,7 @@ conda create --name pyg python=3.8
 conda activate pyg
 ```
 
-2. Install aem64 compilers (needed for using torch-geometric on M1 GPU)
+2. Install arm64 compilers (needed for using torch-geometric on M1 GPU)
 
 ```
 conda install -y clang_osx-arm64 clangxx_osx-arm64 gfortran_osx-arm64
@@ -69,7 +55,7 @@ It will display something like this:
 2.0.0
 ```
 
-3. Install the dependencies (PyTorch Geometric)
+4. Install the dependencies (PyTorch Geometric)
 
 ```
 MACOSX_DEPLOYMENT_TARGET=13.0 CC=clang CXX=clang++ python -m pip --no-cache-dir  install  torch-scatter -f https://data.pyg.org/whl/torch-1.12.1+${cpu}.html
@@ -78,7 +64,7 @@ MACOSX_DEPLOYMENT_TARGET=13.0 CC=clang CXX=clang++ python -m pip --no-cache-dir 
 MACOSX_DEPLOYMENT_TARGET=13.0 CC=clang CXX=clang++ python -m pip --no-cache-dir  install torch-geometric
 ```
 
-4. Install other dependencies
+5. Install other dependencies
 
 ```
 conda install -c conda-forge matplotlib
@@ -86,7 +72,7 @@ conda install -c anaconda networkx
 conda install -c anaconda seaborn
 ```
 
-5. Resources: [Installing PyTorch Geometric on Mac M1 with Accelerated GPU Support](https://medium.com/@jgbrasier/installing-pytorch-geometric-on-mac-m1-with-accelerated-gpu-support-2e7118535c50)
+6. Resources: [Installing PyTorch Geometric on Mac M1 with Accelerated GPU Support](https://medium.com/@jgbrasier/installing-pytorch-geometric-on-mac-m1-with-accelerated-gpu-support-2e7118535c50)
 
 ### Linux
 
@@ -197,7 +183,7 @@ python test/test_slim.py --alg repfl --global_run_name global_repfl --run_name r
 ```
 
 
-## Please cite the following paper when using our work:
+## Please cite the following paper when using our work
 
 ```latex
 @inproceedings{ghilea2023replica,
